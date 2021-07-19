@@ -3,3 +3,50 @@
 *::after {
   box-sizing: border-box;
 }
+
+/*---------------------------------grid-basic-layout-------------------------------*/
+.grid-box {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat (5, 20%);
+  grid-template-rows: repeat (5, 20%);
+  grid-template-areas:
+    "header header header sidebar"
+    "images images images sidebar"
+    "contentbox contentbox contentbox sidebar"
+    "footer footer footer sidebar";
+}
+
+@media screen and (max-width: 940px) {
+  .grid-box {
+    grid-template-areas:
+      "images images images images"
+      "header header header header"
+      "contentbox contentbox contentbox contentbox"
+      "sidebar sidebar sidebar sidebar"
+      "footer footer footer footer";
+  }
+}
+
+.header {
+  background: red;
+  grid-area: header;
+}
+.contentbox {
+  background: black;
+  color: rgb(255, 255, 255);
+  grid-area: contentbox;
+}
+.sidebar {
+  background: blue;
+  grid-area: sidebar;
+}
+.footer {
+  background: green;
+  grid-area: footer;
+}
+.images {
+  background: rgb(0, 209, 174);
+  grid-area: images;
+}
